@@ -1,4 +1,4 @@
-:root{
+:root {
   --primary: #fff;
   --bg-image: url('https://i.imgur.com/o9AwyZ1.png');
   --bg-envelope-color: #fac8ff;
@@ -8,7 +8,8 @@
   --txt-color: #444;
   --heart-color: rgb(252, 8, 231);
 }
-body{
+
+body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -17,20 +18,24 @@ body{
   align-items: center;
   justify-content: center;
 }
+
 .container {
   height: 100vh;
   display: grid;
   place-items: center;
 }
+
 .container > .envelope-wrapper {
   background: var(--bg-envelope-color);
   box-shadow: 0 0 40px var(--shadow-color);
 }
+
 .envelope-wrapper > .envelope {
   position: relative;
   width: 300px;
   height: 230px;
 }
+
 .envelope-wrapper > .envelope::before {
   content: "";
   position: absolute;
@@ -42,17 +47,19 @@ body{
   transform-origin: top;
   transition: all 0.5s ease-in-out 0.7s;
 }
+
 .envelope-wrapper > .envelope::after {
   content: "";
   position: absolute;
   z-index: 2;
-  width: 0px;
-  height: 0px;
+  width: 0;
+  height: 0;
   border-top: 130px solid transparent;
   border-right: 150px solid var(--envelope-cover);
   border-bottom: 100px solid var(--envelope-cover);
   border-left: 150px solid var(--envelope-cover);
 }
+
 .envelope > .letter {
   position: absolute;
   right: 20%;
@@ -72,6 +79,7 @@ body{
   text-align: left;
   font-size: 7px;
 }
+
 .heart {
   position: absolute;
   top: 50%;
@@ -85,7 +93,8 @@ body{
   box-shadow: 0 1px 6px var(--shadow-color);
   cursor: pointer;
 }
-.heart:before, 
+
+.heart:before,
 .heart:after {
   content: "";
   position: absolute;
@@ -94,21 +103,26 @@ body{
   background-color: var(--heart-color);
   border-radius: 50%;
 }
+
 .heart:before {
   top: -7.5px;
 }
+
 .heart:after {
   right: 7.5px;
 }
+
 .flap > .envelope:before {
   transform: rotateX(180deg);
   z-index: 0;
 }
+
 .flap > .envelope > .letter {
   bottom: 100px;
   transform: scale(1.5);
   transition-delay: 1s;
 }
+
 .flap > .heart {
   transform: rotate(90deg);
   transition-delay: 0.4s;
